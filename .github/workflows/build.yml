@@ -1,0 +1,29 @@
+name: Build IPA
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build unsigned IPA
+        run: |
+          xcodebuild -scheme MemoQuizApp \
+            -destination 'generic/platform=iOS' \
+            -configuration Release \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO build
+          APP_PATH=$(find build -name MemoQuizApp.app -type d | head -n 1)
+          mkdir -p build/ipa/Payload
+          cp -R "$APP_PATH" build/ipa/Payload/
+          cd build/ipa
+          zip -r ../MemoQuizApp.ipa Payload
+          cd ../..
+      - uses: actions/upload-artifact@v3
+        with:
+          name: MemoQuizApp-ipa
+          path: build/MemoQuizApp.ipa
