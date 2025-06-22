@@ -16,6 +16,7 @@ final class QuizViewModel: ObservableObject {
     @Published var questions: [QuizQuestion] = []
     @Published var currentIndex: Int = 0
     @Published var alertInfo: AlertInfo?
+    @Published var rawText: String = ""
 
     init() {
         loadQuestions()
@@ -27,6 +28,7 @@ final class QuizViewModel: ObservableObject {
             print("Failed to load questions")
             return
         }
+        rawText = content
         questions = parseQuestions(from: content).shuffled()
     }
 
@@ -77,6 +79,12 @@ final class QuizViewModel: ObservableObject {
 
     func restart() {
         questions.shuffle()
+        currentIndex = 0
+    }
+
+    func updateQuestions(from text: String) {
+        rawText = text
+        questions = parseQuestions(from: text).shuffled()
         currentIndex = 0
     }
 }

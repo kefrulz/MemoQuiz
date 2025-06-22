@@ -2,6 +2,7 @@ import SwiftUI
 
 struct QuizView: View {
     @EnvironmentObject var viewModel: QuizViewModel
+    @State private var showConfig = false
 
     var body: some View {
         NavigationView {
@@ -38,6 +39,16 @@ struct QuizView: View {
                     }
                 }
             }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Configure") {
+                    showConfig = true
+                }
+            }
+        }
+        .sheet(isPresented: $showConfig) {
+            QuestionConfigView().environmentObject(viewModel)
         }
     }
 }
