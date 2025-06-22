@@ -1,0 +1,222 @@
+
+
+Stakeholder Analysis
+    1.    What is a stakeholder (PMI definition)?
+A) Groups supporting the project during execution
+B) Individuals and organizations affected by the project ✅
+C) Only team members and project manager
+D) External consultants
+    2.    What is stakeholder analysis?
+A) A project scheduling method
+B) Techniques to identify and understand expectations ✅
+C) A testing method
+D) A budgeting tool
+    3.    What is the first step in stakeholder analysis?
+A) Risk analysis
+B) Group brainstorming
+C) Identifying project stakeholders ✅
+D) Creating overview
+    4.    What helps mitigate project risks in stakeholder analysis?
+A) Making user stories
+B) Clarifying roles and responsibilities ✅
+C) Using a Kanban board
+D) Avoiding daily meetings
+    5.    Why should stakeholder analysis be done early?
+A) For budget planning
+B) To uncover hidden agendas ✅
+C) For sprint planning
+D) To define system architecture
+    6.    What tool maps stakeholder influence and interest?
+A) Gantt chart
+B) Stakeholder matrix ✅
+C) Product backlog
+D) MoSCoW table
+    7.    What happens if roles are unclear?
+A) Faster completion
+B) Project confusion increases ✅
+C) Better flexibility
+D) Budget decreases
+
+
+
+Story Types: User, Job, Problem, Improvement
+    8.    Why are User Stories popular in Scrum?
+A) Required by the Scrum Guide
+B) Easy to understand and flexible ✅
+C) Automatically generate documentation
+D) Used only in planning
+    9.    What is a Job Story?
+A) A test-driven story
+B) Story focusing on user context and motivation ✅
+C) Legal project requirement
+D) Retrospective summary
+    10.    When are Job Stories useful?
+A) After release
+B) During discovery phase ✅
+C) Only in testing
+D) After bug fixing
+    11.    Disadvantage of Problem Stories?
+A) Too detailed
+B) Lack context, risk building wrong solution ✅
+C) Costly
+D) Always user-focused
+    12.    Problem Story format?
+A) When I want to <…>
+B) In order to , we will  ✅
+C) If , then 
+D) What we did, why we did it
+    13.    Job Story format?
+A) When , I want to , so I can  ✅
+B) Who, what, why
+C) Do  for 
+D) When  clicks 
+    14.    Benefit of Improvement Stories?
+A) Help define new teams
+B) Avoid unnecessary bug discussions ✅
+C) Measure budget
+D) Remove need for testing
+    15.    Which story type is best for backend tech tasks?
+A) User Stories
+B) FDD Features ✅
+C) Job Stories
+D) Kanban cards
+    16.    Key difference between User & Job Stories?
+A) User Story is shorter
+B) Job Story emphasizes motivation and context ✅
+C) Job Story includes budget
+D) Same thing
+    17.    Why use Problem Stories early in a project?
+A) Better code
+B) Identify the true problem and scope ✅
+C) Avoid feedback
+D) Reduce documentation
+
+
+
+Project Overview & Planning
+    18.    One Rule of Project Management (course)?
+A) Budget tracking
+B) Maintain project overview ✅
+C) Daily stand-ups
+D) Fast delivery
+    19.    Why is the overview essential?
+A) Helps user testing
+B) Tools/methods are useless without it ✅
+C) Saves storage
+D) Documents ethics
+    20.    How to maintain an overview?
+A) Write it at end
+B) Create early, update regularly ✅
+C) Only share with PM
+D) Do it during retrospectives
+    21.    Which tool visualizes timelines?
+A) Gantt chart ✅
+B) Stakeholder matrix
+C) Job Story
+D) Wireframe
+    22.    What is a project backlog?
+A) A prioritized list of features or tasks ✅
+B) A budget sheet
+C) Risk log
+D) Group contract
+    23.    What is a sprint backlog?
+A) Tasks selected for current sprint ✅
+B) Final report
+C) Backlog from last semester
+D) Risk matrix
+    24.    Goal of a retrospective?
+A) Reflect on work and improve ✅
+B) Assign roles
+C) Present backlog
+D) Track time
+    25.    What does a Kanban board show?
+A) Workflow status (To Do, Doing, Done) ✅
+B) Gantt chart
+C) Ethical constraints
+D) User personas
+    26.    When is the overview finalized?
+A) After submission
+B) After planning and stakeholder discussion ✅
+C) During testing
+D) Right before group presentation
+
+
+
+Group Dynamics & Collaboration
+    27.    Why create a group contract?
+A) To define rules and handle conflicts ✅
+B) To avoid teacher feedback
+C) For LinkedIn sharing
+D) For submission score
+    28.    Best way to handle internal conflict?
+A) Ignore it
+B) Let supervisor solve it
+C) Use group contract and communicate ✅
+D) Quit the group
+    29.    Why reflect on your team role?
+A) For extra credit
+B) Improve teamwork and self-awareness ✅
+C) Reduce workload
+D) Just to fill report
+    30.    What tool helps define team roles?
+A) MoSCoW
+B) Gantt chart
+C) RACI matrix ✅
+D) FDD diagram
+    31.    Why is empathy important in teamwork?
+A) Saves time
+B) Reduces conflict, improves collaboration ✅
+C) For design only
+D) For exams
+    32.    What does “effective collaboration” mean?
+A) Avoiding responsibility
+B) Sharing tasks, communication, accountability ✅
+C) Working independently
+D) Getting top grade
+
+
+
+Requirements & Ethics
+    33.    Why gather requirements early?
+A) To reduce meetings
+B) Align with user/stakeholder expectations ✅
+C) Avoid design
+D) Delay development
+    34.    What is the MoSCoW method?
+A) Prioritization: Must, Should, Could, Won’t ✅
+B) A testing method
+C) A diagram format
+D) A design tool
+    35.    Functional requirement is:
+A) What the system must do ✅
+B) System color scheme
+C) Mood board
+D) Team hierarchy
+    36.    Non-functional requirement is:
+A) Feature description
+B) System constraints like performance or security ✅
+C) User goal
+D) Group size
+    37.    Ethical concern in data collection?
+A) Informed consent and data privacy ✅
+B) Cloud speed
+C) Code ownership
+D) Programming language
+    38.    Link between science and practice?
+A) Practice ignores science
+B) Science justifies methods in real-world solutions ✅
+C) Science is theoretical only
+D) Practice comes before theory
+
+
+Additional Roles & Logic
+    39.    Role of Product Owner in Agile?
+A) Write code
+B) Prioritize backlog and represent users ✅
+C) Test database
+D) Do sprints alone
+    40.    Why define clear deliverables?
+A) So everyone knows what’s expected and when ✅
+B) For teacher’s grading
+C) To budget better
+D) To test features
