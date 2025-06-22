@@ -10,7 +10,7 @@ struct QuizView: View {
                 VStack(alignment: .leading, spacing: 20) {
                     Text(viewModel.questions[viewModel.currentIndex].text)
                         .font(.title2)
-                    ForEach(viewModel.questions[viewModel.currentIndex].answers.indices, id: .self) { index in
+                    ForEach(viewModel.questions[viewModel.currentIndex].answers.indices, id: \.self) { index in
                         Button(action: {
                             viewModel.selectAnswer(index)
                         }) {
@@ -25,6 +25,15 @@ struct QuizView: View {
                 }
                 .padding()
                 .navigationTitle("Question \(viewModel.currentIndex + 1)/\(viewModel.questions.count)")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showConfig = true
+                        } label: {
+                            Image(systemName: "pencil")
+                        }
+                    }
+                }
                 .alert(item: $viewModel.alertInfo) { info in
                     Alert(title: Text(info.title), message: Text(info.message), dismissButton: .default(Text("Next")) {
                         viewModel.nextQuestion()
@@ -40,15 +49,8 @@ struct QuizView: View {
                 }
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Configure") {
-                    showConfig = true
-                }
-            }
-        }
         .sheet(isPresented: $showConfig) {
-            QuestionConfigView().environmentObject(viewModel)
+            QuestionConfigView()
         }
     }
 }

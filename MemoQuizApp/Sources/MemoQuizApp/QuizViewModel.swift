@@ -14,7 +14,7 @@ struct AlertInfo: Identifiable {
 
 final class QuizViewModel: ObservableObject {
     @Published var questions: [QuizQuestion] = []
-    @Published var currentIndex: Int = 0
+    @Published var currentIndex = 0
     @Published var alertInfo: AlertInfo?
     @Published var rawText: String = ""
 
@@ -34,19 +34,19 @@ final class QuizViewModel: ObservableObject {
 
     func parseQuestions(from text: String) -> [QuizQuestion] {
         var result: [QuizQuestion] = []
-        var questionText: String = ""
+        var question = ""
         var answers: [String] = []
-        var correct: Int = 0
+        var correct = 0
         for line in text.components(separatedBy: "\n") {
             let trimmed = line.trimmingCharacters(in: .whitespaces)
             if trimmed.range(of: "^\\d+\\.", options: .regularExpression) != nil {
-                if !questionText.isEmpty && !answers.isEmpty {
-                    result.append(QuizQuestion(text: questionText, answers: answers, correctIndex: correct))
+                if !question.isEmpty && !answers.isEmpty {
+                    result.append(QuizQuestion(text: question, answers: answers, correctIndex: correct))
                 }
-                if let dotRange = trimmed.range(of: ".") {
-                    questionText = String(trimmed[dotRange.upperBound...]).trimmingCharacters(in: .whitespaces)
+                if let dot = trimmed.firstIndex(of: ".") {
+                    question = String(trimmed[trimmed.index(after: dot)...]).trimmingCharacters(in: .whitespaces)
                 } else {
-                    questionText = ""
+                    question = ""
                 }
                 answers = []
                 correct = 0
@@ -54,22 +54,22 @@ final class QuizViewModel: ObservableObject {
                 var answer = String(trimmed.dropFirst(2)).trimmingCharacters(in: .whitespaces)
                 let isCorrect = answer.contains("✅")
                 answer = answer.replacingOccurrences(of: "✅", with: "").trimmingCharacters(in: .whitespaces)
-                if isCorrect {
-                    correct = answers.count
-                }
+                if isCorrect { correct = answers.count }
                 answers.append(answer)
             }
         }
-        if !questionText.isEmpty && !answers.isEmpty {
-            result.append(QuizQuestion(text: questionText, answers: answers, correctIndex: correct))
+        if !question.isEmpty && !answers.isEmpty {
+            result.append(QuizQuestion(text: question, answers: answers, correctIndex: correct))
         }
         return result
     }
 
     func selectAnswer(_ index: Int) {
         let isCorrect = index == questions[currentIndex].correctIndex
-        alertInfo = AlertInfo(title: isCorrect ? "Correct" : "Wrong",
-                              message: isCorrect ? "Good job!" : "The correct answer was \(questions[currentIndex].answers[questions[currentIndex].correctIndex])")
+        alertInfo = AlertInfo(
+            title: isCorrect ? "Correct" : "Wrong",
+            message: isCorrect ? "Good job!" : "The correct answer was \(questions[currentIndex].answers[questions[currentIndex].correctIndex])"
+        )
     }
 
     func nextQuestion() {

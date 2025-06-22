@@ -9,9 +9,7 @@ struct QuestionConfigView: View {
         NavigationView {
             TextEditor(text: $text)
                 .padding()
-                .onAppear {
-                    text = viewModel.rawText
-                }
+                .onAppear { text = viewModel.rawText }
                 .navigationTitle("Edit Questions")
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
